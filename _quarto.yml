@@ -12,11 +12,11 @@ website:
       - text: Blog
         href: blog-listing.qmd
   page-footer: 
-    center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
+    center: "Powered with GitHub and Quarto<br>© Jake Marcell, 2023"
 
 format:
   html:
-    theme: 
+    theme: minty
       light: flatly
       dark: darkly
     mainfont: system-ui; 
