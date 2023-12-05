@@ -9,7 +9,7 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/jake-marcell-7888642a3/
     - icon: instagram
       text: Instagram
       href: https://instagram.com/jakemarcelll/
@@ -37,6 +37,7 @@ Graduate of Webster Schroeder High School
 
 ## Experience
 
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
+Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024 <br>
+Delta Sonic Car Wash Sales Associate | Jan 2020 - Present
 
 
