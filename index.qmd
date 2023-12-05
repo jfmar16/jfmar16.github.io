@@ -1,7 +1,7 @@
 ---
 title: "Jake Marcell"
 about:
-  template: marquee  # jolla  trestles  solana  marquee  broadside
+  template: trestles  # jolla  trestles  solana  marquee  broadside
   image: img/profile.png
   image-width: 15em
   image-shape: rounded # rectangle  round  rounded
@@ -32,7 +32,8 @@ Jake Marcell majors in Applied Mathematics at SUNY Geneseo. When not working on 
 
 State University of New York at Geneseo | Geneseo, NY <br>
 Undergraduate for B.S. in Applied Mathematics | Aug 2022 - May 2026 <br>
-Minor in Data Analytics 
+Minor in Data Analytics <br>
+Graduate of Webster Schroeder High School
 
 ## Experience
 

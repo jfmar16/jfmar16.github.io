@@ -1,0 +1,23 @@
+---
+title: "Homework"
+subtitle: "Quarto Template<br><br>" 
+date: "`r Sys.Date()`"
+
+format: 
+  html:
+    toc: true
+    number-sections: true
+    code-fold: false       # https://quarto.org/docs/output-formats/html-code.html
+    code-summary: "Show the code"
+    code-tools: true
+    highlight-style: espresso # atom-one tango espresso
+
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  message: false
+  fig-width: 9
+  
+---
+

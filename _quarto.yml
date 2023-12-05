@@ -11,6 +11,10 @@ website:
         href: project.qmd
       - text: Blog
         href: blog-listing.qmd
+      - text: Homework
+        href: hw.qmd
+        
+        
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© Jake Marcell, 2023"
 
