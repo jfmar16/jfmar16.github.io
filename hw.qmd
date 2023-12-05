@@ -1,7 +1,7 @@
 ---
 title: "Homework"
 subtitle: "Quarto Template<br><br>" 
-date: "`r Sys.Date()`"
+date: "`r Sys.Date(Dec 5th 2023)`"
 
 format: 
   html:
@@ -10,7 +10,7 @@ format:
     code-fold: false       # https://quarto.org/docs/output-formats/html-code.html
     code-summary: "Show the code"
     code-tools: true
-    highlight-style: espresso # atom-one tango espresso
+    highlight-style: tango # atom-one tango espresso
 
 execute: 
   echo: true
@@ -20,4 +20,5 @@ execute:
   fig-width: 9
   
 ---
+
 
