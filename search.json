@@ -130,6 +130,6 @@
     "href": "hw.html",
     "title": "DANL200 Homework #4",
     "section": "",
-    "text": "1 Data Frame\nAbout this homework :cool: The data.frame spotify_all includes information about Spotify users’ playlists. The unit of observation in spotify_all is a track in a music playlist.\n\nspotify_all &lt;- read_csv('https://bcdanl.github.io/data/spotify_all.csv')\nrmarkdown::paged_table(spotify_all)"
+    "text": "1 Data Frame\nAbout this homework :smile: The data.frame spotify_all includes information about Spotify users’ playlists. The unit of observation in spotify_all is a track in a music playlist.\n\nspotify_all &lt;- read_csv('https://bcdanl.github.io/data/spotify_all.csv')\nrmarkdown::paged_table(spotify_all)\n\n\n\n  \n\n\n\n\n\n2 ggplot top 10 artists\n\nQ1c &lt;- spotify_all %&gt;% \n  group_by(artist_name) %&gt;% \n  mutate(n_popular_artist = n()) %&gt;% \n  ungroup() %&gt;% \n  mutate( artist_ranking = dense_rank( desc(n_popular_artist) ) ) %&gt;% \n  filter( artist_ranking &lt;= 10) \n  \n# boxplot\nggplot(Q1c,\n       aes(x = pos, y = fct_reorder(artist_name, -artist_ranking)) ) +\n  geom_boxplot() +\n  stat_summary(\n    fun = mean,\n    color = 'red'\n  )"
   }
 ]
