@@ -1,7 +1,7 @@
 ---
 title: "DANL200 Homework #4"
 subtitle: "Jake Marcell<br><br>" 
-date: "Dec 5th 2023"
+date: "`r Sys.Date()`"
 
 format: 
   html:
