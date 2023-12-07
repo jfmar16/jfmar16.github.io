@@ -130,6 +130,6 @@
     "href": "hw.html",
     "title": "DANL200 Homework #4",
     "section": "",
-    "text": "1 Data Frame\nAbout this homework :cool: The data.frame spotify_all includes information about Spotify users’ playlists. The unit of observation in spotify_all is a track in a music playlist.\n\nspotify_all &lt;- read_csv('https://bcdanl.github.io/data/spotify_all.csv')\n\nrmarkdown::paged_table(spotify_all)"
+    "text": "1 Data Frame\nAbout this homework :cool: The data.frame spotify_all includes information about Spotify users’ playlists. The unit of observation in spotify_all is a track in a music playlist.\n\nspotify_all &lt;- read_csv('https://bcdanl.github.io/data/spotify_all.csv')\nrmarkdown::paged_table(spotify_all)"
   }
 ]

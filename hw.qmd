@@ -46,7 +46,7 @@ theme_set(theme_ipsum()+
 
 # Data Frame
 
-About this homework :cool:
+About this homework :smile:
 The data.frame spotify_all includes information about Spotify users’ playlists.
 The unit of observation in spotify_all is a track in a music playlist.
 
@@ -54,8 +54,31 @@ The unit of observation in spotify_all is a track in a music playlist.
 
 ```{r}
 spotify_all <- read_csv('https://bcdanl.github.io/data/spotify_all.csv')
-
 rmarkdown::paged_table(spotify_all)
 ```
+
+# ggplot top 10 artists
+
+```{r}
+Q1c <- spotify_all %>% 
+  group_by(artist_name) %>% 
+  mutate(n_popular_artist = n()) %>% 
+  ungroup() %>% 
+  mutate( artist_ranking = dense_rank( desc(n_popular_artist) ) ) %>% 
+  filter( artist_ranking <= 10) 
+  
+# boxplot
+ggplot(Q1c,
+       aes(x = pos, y = fct_reorder(artist_name, -artist_ranking)) ) +
+  geom_boxplot() +
+  stat_summary(
+    fun = mean,
+    color = 'red'
+  )
+```
+
+
+
+
 
 
