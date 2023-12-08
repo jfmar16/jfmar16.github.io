@@ -1,5 +1,5 @@
 ---
-title: "Insightful Analytics<br><br>"
+title: "Informative Analytical Solutions<br><br>"
 listing:
   contents: posts
   type: default
