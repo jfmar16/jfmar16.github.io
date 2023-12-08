@@ -1,0 +1,46 @@
+---
+title: "DANL200 Classwork"
+subtitle: "Jake Marcell<br><br>" 
+date: "`r Sys.Date()`"
+
+format: 
+  html:
+    toc: true
+    number-sections: true
+    code-fold: false       # https://quarto.org/docs/output-formats/html-code.html
+    code-summary: "Show the code"
+    code-tools: true
+    highlight-style: tango # atom-one tango espresso
+
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  message: false
+  fig-width: 9
+  
+---
+
+
+---
+```{r setup}
+#| include: false
+library(tidyverse)
+library(skimr)
+library(ggthemes)
+library(hrbrthemes)
+
+theme_set(theme_ipsum()+
+          theme(strip.background =element_rect(fill="pink"),
+                axis.title.x = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(10,0,0,0)),
+                axis.title.y = 
+                  element_text(angle = 0,
+                               size = rel(1.33),
+                               margin = margin(0,10,0,0))
+                )
+          )
+```
+
