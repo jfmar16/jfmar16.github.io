@@ -2,7 +2,7 @@
 title: "NYC Restaurants"
 author: "Jake Marcell"
 date: "2023-10-30"
-categories: [starwars, code, analysis]
+categories: [nyc restaurants, code, analysis]
 image: "image.png"
 
 execute: 

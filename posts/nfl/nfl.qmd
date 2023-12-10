@@ -2,7 +2,7 @@
 title: "NFL"
 author: "Jake Marcell"
 date: "2023-10-30"
-categories: [starwars, code, analysis]
+categories: [nfl, code, analysis]
 image: "image.png"
 
 execute: 
