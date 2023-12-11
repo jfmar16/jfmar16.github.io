@@ -16,9 +16,9 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com
-    - icon: jakemarcell-resume.pdf 
+    - icon: file-earmark-pdf 
       text: Resumé
-      href: https://jfmar16.github.io/resume-example.pdf
+      href: https://jfmar16.github.io/jakemarcell-resume.pdf
     - icon: mailbox
       text: Email
       href: mailto:jfm12@geneseo.edu
