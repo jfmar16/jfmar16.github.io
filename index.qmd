@@ -2,7 +2,7 @@
 title: "Jake Marcell"
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: img/profile.png
+  image: IMG_7630.png
   image-width: 15em
   image-shape: rounded # rectangle  round  rounded
   
