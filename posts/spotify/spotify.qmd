@@ -35,7 +35,7 @@ theme_set(theme_ipsum()+
           )
 ```
 
-Let's analyze the data for 'Spotify' :musical note:
+Let's analyze the data for 'Spotify' :guitar:
 
 # Data Frame
 ```{r}
