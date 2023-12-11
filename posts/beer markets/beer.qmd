@@ -10,6 +10,7 @@ execute:
   message: false
   
 toc: true
+from: markdown+emoji
 ---
 
 
@@ -33,6 +34,8 @@ theme_set(theme_ipsum()+
                 )
           )
 ```
+
+Let's analyze the data for 'Beer Markets' :beer:
 
 # Data Frame
 ```{r}
