@@ -60,7 +60,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is the first post in a Quarto blog. Welcome! This blog contains posts where various data frames will be analyzed statistically and visually. This includes the analysis of the data sets, ‘NFL’, ‘Spotify’, ‘Beer Markets’, and ‘NYC Restaurants’."
   },
   {
     "objectID": "danl200-hw5-Marcell-Jake.html",

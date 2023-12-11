@@ -5,8 +5,9 @@ date: "2023-10-27"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is the first post in a Quarto blog. Welcome! This blog contains posts where
+various data frames will be analyzed statistically and visually. This includes the 
+analysis of the data sets, 'NFL', 'Spotify', 'Beer Markets', and 'NYC Restaurants'. 
 
-![](thumbnail.jpg)
+![](dataanallogo.png)
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
