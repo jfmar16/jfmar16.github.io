@@ -113,5 +113,19 @@ top_10_passers <- passer_summary %>%
   top_n(10, wt = mean_epa)
 ```
 
+# Q2h
+```{r}
+ggplot(top_10_passers, aes(x = reorder(passer, mean_epa), y = mean_epa)) +
+  geom_bar(stat = "identity", fill = "green", color = "red", width = 0.7) +
+  labs(title = "Mean EPA for Top 10 Passers",
+       x = "Quarterback",
+       y = "Mean EPA") +
+  theme_ipsum() +
+  theme(axis.text.y = element_text(size = 9, hjust = 0))
+
+# This ggplot code generates a horizontal bar chart where the x-axis represents the mean EPA, and each bar corresponds to a quarterback. 
+```
+
+
 
 
