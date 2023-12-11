@@ -133,8 +133,7 @@ top_brands_plot <- top_markets %>%
        y = "Total Ounces Sold") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-print(top_brands_plot)
-
+print(top_brands_plot) 
 ```
 
 
