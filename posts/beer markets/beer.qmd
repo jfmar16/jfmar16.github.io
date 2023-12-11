@@ -3,7 +3,7 @@ title: "Beer Markets"
 author: "Jake Marcell"
 date: "2023-10-30"
 categories: [beer, code, analysis]
-image: "image.png"
+image: "beerimage.png"
 
 execute: 
   warning: false
