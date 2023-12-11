@@ -11,6 +11,8 @@ website:
         href: project.qmd
       - text: Blog
         href: blog-listing.qmd
+      - text: Homework
+        href: danl200-hw5-Marcell-Jake.qmd
         
         
   page-footer: 
