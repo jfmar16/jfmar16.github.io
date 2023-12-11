@@ -16,7 +16,7 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com
-    - icon: file-earmark-pdf
+    - icon: jakemarcell-resume.pdf 
       text: Resumé
       href: https://jfmar16.github.io/resume-example.pdf
     - icon: mailbox
