@@ -155,6 +155,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
   </ul></li>
+  <li><a href="#top-5-beer-brands-by-age-group" id="toc-top-5-beer-brands-by-age-group" class="nav-link" data-scroll-target="#top-5-beer-brands-by-age-group"><span class="header-section-number">3</span> Top 5 Beer Brands by Age Group</a></li>
+  <li><a href="#visualization-top-5-beer-brands-by-age-group" id="toc-visualization-top-5-beer-brands-by-age-group" class="nav-link" data-scroll-target="#visualization-top-5-beer-brands-by-age-group"><span class="header-section-number">4</span> Visualization: Top 5 Beer Brands by Age Group</a></li>
+  <li><a href="#transaction-counts-per-brand-for-age-groups" id="toc-transaction-counts-per-brand-for-age-groups" class="nav-link" data-scroll-target="#transaction-counts-per-brand-for-age-groups"><span class="header-section-number">5</span> Transaction Counts per Brand for Age Groups</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -201,6 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>beer_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://bcdanl.github.io/data/beer_markets.csv'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>The ‘skim’ function is used to generate summary statistics, providing key insights into central tendencies, dispersions, and other relevant characteristics of the dataset. The ‘select(-n_missing)’ part excludes information about missing values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(beer_data) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_missing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -527,6 +532,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The summary statistics provide us with key insights into the central </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tendencies, dispersions, and other relevant characteristics of the dataset.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+</section>
+<section id="top-5-beer-brands-by-age-group" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Top 5 Beer Brands by Age Group</h1>
+<p>The code below calculates summary statistics (mean, median, max, min) of total beer volume by brand for each age group. The results are then arranged to identify the top 5 beer brands in terms of total volume for each age group.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>age_brand_preference <span class="ot">&lt;-</span> beer_data <span class="sc">%&gt;%</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age, brand) <span class="sc">%&gt;%</span></span>
@@ -561,45 +571,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 19 &lt;30   BUSCH LIGHT       24072 
 20 &lt;30   COORS LIGHT       22296 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code calculates summary statistics (mean, median, max, min) </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># of total beer volume by brand for each age group.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="visualization-top-5-beer-brands-by-age-group" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Visualization: Top 5 Beer Brands by Age Group</h1>
+<p>The following code utilizes the ggplot2 library to create a bar chart visualizing the top 5 beer brands for each age group based on total beer volume.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_brand_preference, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> total_floz, <span class="at">fill =</span> brand)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 5 Beer Brands by Age Group"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Beer Volume (floz)"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Brand"</span>) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(age_brand_preference, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> total_floz, <span class="at">fill =</span> brand)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Top 5 Beer Brands by Age Group"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Beer Volume (floz)"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Brand"</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
+</section>
+<section id="transaction-counts-per-brand-for-age-groups" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Transaction Counts per Brand for Age Groups</h1>
+<p>The next code segment calculates the number of transactions for each beer brand within different age groups. The results are then visualized using a scatter plot with facets for each brand.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>beer_data<span class="sc">$</span>brand <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beer_data<span class="sc">$</span>brand)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>beer_data<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beer_data<span class="sc">$</span>age)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>transaction_counts <span class="ot">&lt;-</span> beer_data <span class="sc">%&gt;%</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age, brand) <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TransactionCount =</span> <span class="fu">n</span>())</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(transaction_counts, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> TransactionCount)) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>brand, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Transactions per Brand for Age"</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Transaction Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>beer_data<span class="sc">$</span>brand <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beer_data<span class="sc">$</span>brand)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>beer_data<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(beer_data<span class="sc">$</span>age)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>transaction_counts <span class="ot">&lt;-</span> beer_data <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(age, brand) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">TransactionCount =</span> <span class="fu">n</span>())</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(transaction_counts, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> TransactionCount)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>brand, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Transactions per Brand for Age"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Transaction Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-
-
 </section>
+<section id="conclusion" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Conclusion</h1>
+<p>These visualizations and analyses offer insights into consumer preferences for beer brands across different age groups, shedding light on which brands are most popular in terms of both total volume and transaction counts.</p>
+
+
 </section>
 
 </main> <!-- /main -->
