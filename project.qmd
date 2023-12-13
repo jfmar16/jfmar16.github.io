@@ -48,7 +48,7 @@ theme_set(theme_ipsum()+
 
 # Introduction
 
-Welcome to the fascinating journey through the intricate landscape of beer preferences across age groups! Embark on an exploration of our meticulously curated 'beer_data' set, a treasure trove of information on diverse beer brands. In this project, we delve into a data set containing information on different beer brands. Our focus is on understanding the relationship that age has among buying these brands, providing insights into the diverse world of beers. :beers: :clap:
+Welcome to the fascinating journey through the intricate landscape of beer preferences across age groups! Embark on an exploration of our meticulously curated 'beer_data' set, a treasure trove of information on diverse beer brands. In this project, we delve into a data set containing information on different beer brands. Our focus is on understanding the relationship that age has among buying these brands, providing insights into the diverse world of beers. So, grab your virtual mug, and let's raise a digital toast to the intricate tapestry of beer trends! :beers: :clap:
 
 # Data
 
