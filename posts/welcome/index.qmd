@@ -3,11 +3,10 @@ title: "Welcome To My Blog"
 author: "Jake Marcell"
 date: "2023-10-27"
 categories: [news]
+
+from: markdown+emoji
 ---
 
-This is the first post in a Quarto blog. Welcome! This blog contains posts where
-various data frames will be analyzed statistically and visually. This includes the 
-analysis of the data sets, 'NFL', 'Spotify', 'Beer Markets', and 'NYC Restaurants'. 
+This is the first post in a Quarto blog. Welcome! This blog contains posts where various data frames will be analyzed statistically and visually. This includes the analysis of the data sets, 'NFL', 'Spotify', 'Beer Markets', and 'NYC Restaurants'. :money_mouth_face: :sunglasses: :space_invader:
 
 ![](dataanallogo.png)
-
